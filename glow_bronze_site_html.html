@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glow Bronze | Bronzeamento & Beleza</title>
+  <style>
+    :root {
+      --off-white: #F7F1E8;
+      --areia: #E8D7BF;
+      --dourado: #D6B07A;
+      --bronze: #C27845;
+      --marrom: #4B3426;
+      --caramelo: #B8794A;
+      --branco: #FFFDF8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Montserrat", "Avenir", Arial, sans-serif;
+      background: var(--off-white);
+      color: var(--marrom);
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      background: linear-gradient(135deg, #fff8ef 0%, #efd7bd 100%);
+      overflow: hidden;
+    }
+
+    .hero-content {
+      padding: 42px 8vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    nav {
+      position: absolute;
+      top: 32px;
+      left: 8vw;
+      right: 8vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+    }
+
+    .brand-mini {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0.18em;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: var(--bronze);
+    }
+
+    .nav-links a {
+      margin-left: 26px;
+      text-decoration: none;
+      color: var(--marrom);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .sun-mark {
+      width: 90px;
+      height: 54px;
+      border: 2px solid var(--bronze);
+      border-bottom: none;
+      border-radius: 90px 90px 0 0;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .sun-mark::before {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      color: var(--bronze);
+      font-size: 22px;
+    }
+
+    .sun-mark::after {
+      content: "";
+      position: absolute;
+      width: 145px;
+      height: 1px;
+      background: var(--bronze);
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 10vw, 132px);
+      line-height: 0.88;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--bronze);
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: clamp(22px, 3.2vw, 42px);
+      letter-spacing: 0.42em;
+      margin-top: 20px;
+      color: var(--marrom);
+      font-weight: 300;
+    }
+
+    .tagline {
+      margin-top: 34px;
+      max-width: 560px;
+      font-size: 18px;
+      color: #6d4a35;
+    }
+
+    .tagline strong {
+      color: var(--bronze);
+      font-weight: 700;
+    }
+
+    .hero-buttons {
+      margin-top: 38px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--bronze);
+      color: white;
+      box-shadow: 0 12px 28px rgba(194, 120, 69, 0.22);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--bronze);
+      color: var(--bronze);
+      background: rgba(255,255,255,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      background: linear-gradient(rgba(75, 52, 38, 0.08), rgba(75, 52, 38, 0.08)),
+        url('https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .hero-image::after {
+      content: "Glow que realça a sua melhor versão.";
+      position: absolute;
+      right: 8%;
+      bottom: 8%;
+      max-width: 320px;
+      font-family: Georgia, serif;
+      color: white;
+      font-size: 34px;
+      line-height: 1.1;
+      text-shadow: 0 8px 28px rgba(0,0,0,0.28);
+    }
+
+    section {
+      padding: 92px 8vw;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 5vw, 64px);
+      font-weight: 400;
+      color: var(--bronze);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      max-width: 680px;
+      color: #6d4a35;
+      font-size: 17px;
+      margin-bottom: 44px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.72);
+      border: 1px solid rgba(194, 120, 69, 0.16);
+      border-radius: 28px;
+      padding: 30px;
+      min-height: 230px;
+      box-shadow: 0 22px 54px rgba(75, 52, 38, 0.06);
+    }
+
+    .card .icon {
+      font-size: 28px;
+      color: var(--bronze);
+      margin-bottom: 22px;
+    }
+
+    .card h3 {
+      font-family: Georgia, serif;
+      font-weight: 400;
+      font-size: 27px;
+      margin-bottom: 12px;
+      color: var(--marrom);
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #74513a;
+    }
+
+    .experience {
+      background: var(--branco);
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .experience-box {
+      background: linear-gradient(135deg, var(--areia), #f8ead9);
+      border-radius: 36px;
+      padding: 48px;
+      min-height: 440px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-box::before {
+      content: "";
+      width: 260px;
+      height: 260px;
+      border: 1px solid rgba(194, 120, 69, 0.35);
+      border-radius: 50%;
+      position: absolute;
+      top: -70px;
+      right: -50px;
+    }
+
+    .experience-box h2 {
+      font-family: Georgia, serif;
+      font-size: 58px;
+      line-height: 0.98;
+      font-weight: 400;
+      color: var(--bronze);
+      position: relative;
+      z-index: 1;
+    }
+
+    .steps {
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(75, 52, 38, 0.14);
+    }
+
+    .step span {
+      color: var(--bronze);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .step h3 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: 400;
+      margin: 7px 0;
+    }
+
+    .use-glow {
+      background: #5a3928;
+      color: var(--off-white);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .use-glow .section-title {
+      color: #f1d2a5;
+    }
+
+    .use-glow .section-subtitle {
+      color: #f7e5d0;
+    }
+
+    .shop-logo {
+      background: #f6eadc;
+      color: var(--marrom);
+      border-radius: 38px;
+      padding: 54px;
+      text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.18);
+    }
+
+    .shop-logo .use {
+      font-size: 18px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .shop-logo .glow {
+      font-family: Georgia, serif;
+      font-size: clamp(72px, 8vw, 118px);
+      font-weight: 400;
+      color: var(--bronze);
+      line-height: 0.9;
+    }
+
+    .shop-logo .desc {
+      margin-top: 22px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #7a5135;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .product h4 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: #f1d2a5;
+    }
+
+    .product p {
+      font-size: 13px;
+      color: #f7e5d0;
+      margin-top: 8px;
+    }
+
+    .branding {
+      background: var(--off-white);
+    }
+
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .brand-item {
+      background: var(--branco);
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid rgba(194, 120, 69, 0.12);
+    }
+
+    .brand-item h3 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--bronze);
+      margin-bottom: 12px;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #ecd1b0, #fbf0df);
+    }
+
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 78px);
+      font-weight: 400;
+      color: var(--bronze);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 34px;
+      color: #6d4a35;
+      font-size: 17px;
+    }
+
+    footer {
+      background: var(--marrom);
+      color: var(--off-white);
+      padding: 34px 8vw;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 920px) {
+      header, .experience, .use-glow {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 540px;
+      }
+
+      .services, .brand-grid, .products {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        position: static;
+        padding-bottom: 60px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="inicio">
+    <div class="hero-content">
+      <nav>
+        <div class="brand-mini">Glow Bronze</div>
+        <div class="nav-links">
+          <a href="#servicos">Serviços</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#useglow">use.glow</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </nav>
+
+      <div class="sun-mark"></div>
+      <h1>Glow <span>Bronze</span></h1>
+      <p class="tagline">
+        Bronzeamento e beleza em Parnamirim/RN para mulheres que querem uma pele iluminada, natural e bem cuidada. <strong>Mais que bronze: um ritual de autoestima.</strong>
+      </p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://wa.me/5584999990000">Agendar horário</a>
+        <a class="btn btn-secondary" href="#servicos">Ver serviços</a>
+      </div>
+    </div>
+    <div class="hero-image"></div>
+  </header>
+
+  <section id="servicos">
+    <h2 class="section-title">Beleza quente, acabamento elegante.</h2>
+    <p class="section-subtitle">
+      A Glow Bronze une resultado, cuidado e estética feminina em uma experiência simples, bonita e profissional.
+    </p>
+
+    <div class="services">
+      <div class="card">
+        <div class="icon">☀</div>
+        <h3>Bronzeamento</h3>
+        <p>Protocolos pensados para realçar o tom da pele com acabamento uniforme e glow natural.</p>
+      </div>
+      <div class="card">
+        <div class="icon">☾</div>
+        <h3>Banho de Lua</h3>
+        <p>Um ritual delicado para iluminar a pele e valorizar o cuidado corporal.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⌒</div>
+        <h3>Cílios</h3>
+        <p>Beleza do olhar com leveza, feminilidade e resultado harmônico.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✦</div>
+        <h3>Estética</h3>
+        <p>Procedimentos corporais e cuidados que complementam sua rotina de beleza.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience" id="experiencia">
+    <div class="experience-box">
+      <h2>Seu momento de glow começa aqui.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span>01 · acolhimento</span>
+        <h3>Atendimento feminino e próximo</h3>
+        <p>Uma experiência pensada para a cliente se sentir confortável, cuidada e confiante.</p>
+      </div>
+      <div class="step">
+        <span>02 · cuidado</span>
+        <h3>Orientação antes e depois</h3>
+        <p>Cuidados simples para ajudar no resultado e na manutenção do bronze.</p>
+      </div>
+      <div class="step">
+        <span>03 · resultado</span>
+        <h3>Pele iluminada sem exagero</h3>
+        <p>Um bronze bonito, elegante e com aparência natural.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="use-glow" id="useglow">
+    <div>
+      <h2 class="section-title">use.glow</h2>
+      <p class="section-subtitle">
+        A loja própria da Glow Bronze: uma curadoria de acessórios femininos para completar o ritual de beleza da cliente antes, durante e depois do bronze.
+      </p>
+
+      <div class="products">
+        <div class="product">
+          <h4>Óculos</h4>
+          <p>Modelos solares, femininos e fáceis de combinar.</p>
+        </div>
+        <div class="product">
+          <h4>Acessórios</h4>
+          <p>Peças douradas, delicadas e com estética verão premium.</p>
+        </div>
+        <div class="product">
+          <h4>Beauty itens</h4>
+          <p>Necessaires, scrunchies, presilhas e itens de autocuidado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop-logo">
+      <div class="use">use.</div>
+      <div class="glow">glow</div>
+      <div class="desc">acessórios femininos</div>
+    </div>
+  </section>
+
+  <section class="branding">
+    <h2 class="section-title">Branding da marca</h2>
+    <p class="section-subtitle">
+      A Glow Bronze deve parecer clara, feminina, solar e confiável. A use.glow entra como uma extensão comercial da experiência: a cliente não só faz o bronze, ela leva o estilo Glow com ela.
+    </p>
+
+    <div class="brand-grid">
+      <div class="brand-item">
+        <h3>Cores</h3>
+        <p>Off white, areia, dourado suave, bronze e marrom. Uma paleta quente, elegante e fácil de aplicar no Instagram, fachada e materiais impressos.</p>
+      </div>
+      <div class="brand-item">
+        <h3>Símbolo</h3>
+        <p>Sol abstrato, brilho minimalista e linhas finas. Nada de sol caricato: a ideia é glow sofisticado e feminino.</p>
+      </div>
+      <div class="brand-item">
+        <h3>Tom de voz</h3>
+        <p>Direto, bonito e acolhedor. Frases simples como: “Seu bronze começa aqui”, “Glow que realça você” e “Mais que bronze, autoestima”.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contato">
+    <h2>Agende seu momento Glow.</h2>
+    <p>
+      Bronzeamento, beleza e acessórios femininos em um espaço pensado para você se sentir mais bonita, confiante e iluminada.
+    </p>
+    <a class="btn btn-primary" href="https://wa.me/5584999990000">Chamar no WhatsApp</a>
+  </section>
+
+  <footer>
+    <div>@glowbronze</div>
+    <div>@use.glow</div>
+    <div>Parnamirim/RN</div>
+  </footer>
+</body>
+</html>
